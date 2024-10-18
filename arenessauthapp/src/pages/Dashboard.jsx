@@ -4,7 +4,6 @@ import { Box,chakra, Grid, GridItem, Text, Image, SimpleGrid, Stat, StatLabel, S
 // import { useNavigate } from 'react-router-dom';
 import { FcAssistant, FcDonate, FcInTransit } from 'react-icons/fc'
 import Sidebar from '../components/Sidebar';
-import Navbar from '../components/NAvbar';
 
 function StatsCard(props) {
     const { title, stat } = props
