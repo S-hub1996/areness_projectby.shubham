@@ -6,7 +6,6 @@ import Sidebar from './components/Sidebar';
 import SignIn from './pages/SignIn';
 import SignUp from './pages/SignUp';
 import Dashboard from './pages/Dashboard';
-import Navbar from './components/NAvbar';
 
 const App = () => {
 const { user } = useSelector((state) => state.auth);
