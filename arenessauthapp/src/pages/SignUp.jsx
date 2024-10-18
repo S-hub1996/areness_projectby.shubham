@@ -59,7 +59,7 @@ export default function SignupCard() {
       return;
     }
 
-    if (formData.password.length>8) {
+    if (formData.password.length < 8) {
         setError('Passwords must be at least 8 characters');
         return;
       }
@@ -83,7 +83,7 @@ export default function SignupCard() {
       minH={'100vh'}
       align={'center'}
       justify={'center'}
-      bg={useColorModeValue('gray.50', 'gray.800')}>
+    bgImage={'https://images.unsplash.com/photo-1729006076855-4297fcf364df?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'}>
       <Stack spacing={8} mx={'auto'} maxW={'lg'} py={12} px={6}>
         <Stack align={'center'}>
           <Heading fontSize={'4xl'} textAlign={'center'}>
@@ -100,6 +100,8 @@ export default function SignupCard() {
           boxShadow={'lg'}
           p={8}>
           <Stack spacing={4}>
+            <Flex>
+
           <FormControl isRequired mb={3} isInvalid={error}>
           <FormLabel>First Name</FormLabel>
           <Input name="firstName" value={formData.firstName} onChange={handleChange} />
@@ -109,6 +111,7 @@ export default function SignupCard() {
           <FormLabel>Last Name</FormLabel>
           <Input name="lastName" value={formData.lastName} onChange={handleChange} />
         </FormControl>
+            </Flex>
 
         <FormControl isRequired mb={3} isInvalid={error}>
           <FormLabel>Email</FormLabel>

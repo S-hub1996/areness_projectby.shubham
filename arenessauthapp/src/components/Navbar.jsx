@@ -16,8 +16,9 @@ import {
   Stack,
   useColorMode,
   Center,
+  IconButton,
 } from '@chakra-ui/react'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
+import { HamburgerIcon, MoonIcon, SunIcon } from '@chakra-ui/icons'
 import { useNavigate } from 'react-router-dom';
 
 
@@ -44,8 +45,9 @@ export default function Navbar() {
     const navigate = useNavigate(); // Hook for navigation
 
     const handleLogout = () => {
-      localStorage.removeItem('user'); // Clear user data from local storage
-      navigate('/'); // Navigate back to Sign In page
+        console.log("Logging out..."); // Debugging statement
+        localStorage.removeItem('user'); // Clear user data from local storage
+        navigate('/'); // Navigate back to Sign In page
     };
   
   const { colorMode, toggleColorMode } = useColorMode()
@@ -63,17 +65,12 @@ export default function Navbar() {
               </Button>
 
               <Menu>
-                <MenuButton
-                  as={Button}
-                  rounded={'full'}
-                  variant={'link'}
-                  cursor={'pointer'}
-                  minW={0}>
-                  <Avatar
-                    size={'sm'}
-                    src={'https://avatars.dicebear.com/api/male/username.svg'}
-                  />
-                </MenuButton>
+              <MenuButton
+    as={IconButton}
+    aria-label='Options'
+    icon={<HamburgerIcon />}
+    variant='outline'
+  />
                 <MenuList alignItems={'center'}>
                   <br />
                   <Center>
